@@ -4,7 +4,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = Root;
-exports.pathVideoPlayback = exports.pathFaceMesh = exports.pathCartoonMirror = exports.pathRockPaperScissors = void 0;
+exports.pathVideoPlayback = exports.pathRockPaperScissors = exports.pathFaceMesh = exports.pathCartoonMirror = void 0;
 
 var _reactRouterDom = require("react-router-dom");
 

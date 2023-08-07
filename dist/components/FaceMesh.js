@@ -33,31 +33,29 @@ var FaceMesh = function FaceMesh(props) {
     var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(video) {
       var detector, predictions;
       return regeneratorRuntime.wrap(function _callee$(_context) {
-        while (1) {
-          switch (_context.prev = _context.next) {
-            case 0:
-              detector = detectorRef.current;
+        while (1) switch (_context.prev = _context.next) {
+          case 0:
+            detector = detectorRef.current;
 
-              if (!(detector !== null)) {
-                _context.next = 6;
-                break;
-              }
+            if (!(detector !== null)) {
+              _context.next = 6;
+              break;
+            }
 
-              _context.next = 4;
-              return detector.estimateFaces({
-                input: video
-              });
+            _context.next = 4;
+            return detector.estimateFaces({
+              input: video
+            });
 
-            case 4:
-              predictions = _context.sent;
-              predictions.forEach(function (prediction) {
-                onFaceEstimate(prediction);
-              });
+          case 4:
+            predictions = _context.sent;
+            predictions.forEach(function (prediction) {
+              onFaceEstimate(prediction);
+            });
 
-            case 6:
-            case "end":
-              return _context.stop();
-          }
+          case 6:
+          case "end":
+            return _context.stop();
         }
       }, _callee);
     }));

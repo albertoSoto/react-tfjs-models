@@ -31,3 +31,4 @@ npm login
 npm version <updated_version>
 npm publish
 ```
+https://bobbyhadz.com/blog/support-for-experimental-syntax-jsx-isnt-currently-enabled

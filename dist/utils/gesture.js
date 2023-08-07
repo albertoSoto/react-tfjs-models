@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.scissor = exports.paper = exports.rock = void 0;
+exports.scissor = exports.rock = exports.paper = void 0;
 
 var _fingerpose = _interopRequireDefault(require("fingerpose"));
 

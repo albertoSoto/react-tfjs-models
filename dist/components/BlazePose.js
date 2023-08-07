@@ -38,32 +38,30 @@ var BlazePose = function BlazePose(props) {
     var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(video) {
       var poseDetector, poses;
       return regeneratorRuntime.wrap(function _callee$(_context) {
-        while (1) {
-          switch (_context.prev = _context.next) {
-            case 0:
-              poseDetector = detector.current;
+        while (1) switch (_context.prev = _context.next) {
+          case 0:
+            poseDetector = detector.current;
 
-              if (!(poseDetector !== null)) {
-                _context.next = 6;
-                break;
-              }
+            if (!(poseDetector !== null)) {
+              _context.next = 6;
+              break;
+            }
 
-              _context.next = 4;
-              return poseDetector.estimatePoses(video, {
-                maxPoses: maxPoses,
-                flipHorizontal: flipHorizontal
-              });
+            _context.next = 4;
+            return poseDetector.estimatePoses(video, {
+              maxPoses: maxPoses,
+              flipHorizontal: flipHorizontal
+            });
 
-            case 4:
-              poses = _context.sent;
-              poses.forEach(function (pose) {
-                onPoseEstimate(pose);
-              });
+          case 4:
+            poses = _context.sent;
+            poses.forEach(function (pose) {
+              onPoseEstimate(pose);
+            });
 
-            case 6:
-            case "end":
-              return _context.stop();
-          }
+          case 6:
+          case "end":
+            return _context.stop();
         }
       }, _callee);
     }));
