@@ -16,6 +16,8 @@
  */
 import { useEffect, useRef, useState } from 'react';
 import { VideoContext } from './global';
+import { jsx as _jsx } from "custom-jsx-library/jsx-runtime";
+import { jsxs as _jsxs } from "custom-jsx-library/jsx-runtime";
 const initVideoState = {
   video: null
 };
@@ -57,21 +59,25 @@ const VideoPlayback = props => {
     sourceRef.current.src = videoSource;
     videoRef.current.load();
   }, [videoSource]);
-  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("video", {
-    ref: videoRef,
-    autoPlay: true,
-    onLoadedData: run,
-    onEnded: onEnded,
-    style: style
-  }, /*#__PURE__*/React.createElement("source", {
-    ref: sourceRef,
-    type: "video/mp4"
-  })), /*#__PURE__*/React.createElement("canvas", {
-    ref: canvasRef,
-    style: style
-  }), /*#__PURE__*/React.createElement(VideoContext.Provider, {
-    value: videoState
-  }, props.children));
+  return _jsxs("div", {
+    children: [_jsx("video", {
+      ref: videoRef,
+      autoPlay: true,
+      onLoadedData: run,
+      onEnded: onEnded,
+      style: style,
+      children: _jsx("source", {
+        ref: sourceRef,
+        type: "video/mp4"
+      })
+    }), _jsx("canvas", {
+      ref: canvasRef,
+      style: style
+    }), _jsx(VideoContext.Provider, {
+      value: videoState,
+      children: props.children
+    })]
+  });
 };
 
 export default VideoPlayback;
