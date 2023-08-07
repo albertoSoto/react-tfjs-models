@@ -1,3 +1,12 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.VideoContext = void 0;
+
+var _react = require("react");
+
 /**
  * @license
  * Copyright 2021-2022 The SeedV Lab.
@@ -14,5 +23,5 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { createContext } from 'react';
-export const VideoContext = /*#__PURE__*/createContext(null);
+var VideoContext = /*#__PURE__*/(0, _react.createContext)(null);
+exports.VideoContext = VideoContext;

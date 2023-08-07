@@ -1,3 +1,14 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.scissor = exports.paper = exports.rock = void 0;
+
+var _fingerpose = _interopRequireDefault(require("fingerpose"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 /**
  * @license
  * Copyright 2021-2022 The SeedV Lab.
@@ -14,46 +25,47 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import fp from 'fingerpose';
-const rock = new fp.GestureDescription('rock');
-rock.addCurl(fp.Finger.Thumb, fp.FingerCurl.FullCurl, 1.0);
-rock.addCurl(fp.Finger.Index, fp.FingerCurl.FullCurl, 1.0);
-rock.addCurl(fp.Finger.Middle, fp.FingerCurl.FullCurl, 1.0);
-rock.addCurl(fp.Finger.Ring, fp.FingerCurl.FullCurl, 1.0);
-rock.addCurl(fp.Finger.Pinky, fp.FingerCurl.FullCurl, 1.0);
-const paper = new fp.GestureDescription('paper');
-paper.addCurl(fp.Finger.Thumb, fp.FingerCurl.NoCurl, 1.0);
-paper.addCurl(fp.Finger.Index, fp.FingerCurl.NoCurl, 1.0);
-paper.addDirection(fp.Finger.Index, fp.FingerDirection.VerticalUp, 1.0);
-paper.addDirection(fp.Finger.Index, fp.FingerDirection.DiagonalUpLeft, 0.75);
-paper.addDirection(fp.Finger.Index, fp.FingerDirection.DiagonalUpRight, 0.75);
-paper.addCurl(fp.Finger.Middle, fp.FingerCurl.NoCurl, 1.0);
-paper.addDirection(fp.Finger.Middle, fp.FingerDirection.VerticalUp, 1.0);
-paper.addDirection(fp.Finger.Middle, fp.FingerDirection.DiagonalUpLeft, 0.75);
-paper.addDirection(fp.Finger.Middle, fp.FingerDirection.DiagonalUpRight, 0.75);
-paper.addCurl(fp.Finger.Ring, fp.FingerCurl.NoCurl, 1.0);
-paper.addDirection(fp.Finger.Ring, fp.FingerDirection.VerticalUp, 1.0);
-paper.addDirection(fp.Finger.Ring, fp.FingerDirection.DiagonalUpLeft, 0.75);
-paper.addDirection(fp.Finger.Ring, fp.FingerDirection.DiagonalUpRight, 0.75);
-paper.addCurl(fp.Finger.Pinky, fp.FingerCurl.NoCurl, 1.0);
-paper.addDirection(fp.Finger.Pinky, fp.FingerDirection.VerticalUp, 1.0);
-paper.addDirection(fp.Finger.Pinky, fp.FingerDirection.DiagonalUpLeft, 0.75);
-paper.addDirection(fp.Finger.Pinky, fp.FingerDirection.DiagonalUpRight, 0.75);
-const scissor = new fp.GestureDescription('scissor');
-scissor.addCurl(fp.Finger.Thumb, fp.FingerCurl.HalfCurl, 0.5);
-scissor.addCurl(fp.Finger.Thumb, fp.FingerCurl.NoCurl, 0.5);
-scissor.addDirection(fp.Finger.Thumb, fp.FingerDirection.VerticalUp, 1.0);
-scissor.addDirection(fp.Finger.Thumb, fp.FingerDirection.DiagonalUpLeft, 1.0);
-scissor.addCurl(fp.Finger.Index, fp.FingerCurl.NoCurl, 1.0);
-scissor.addDirection(fp.Finger.Index, fp.FingerDirection.VerticalUp, 0.75);
-scissor.addDirection(fp.Finger.Index, fp.FingerDirection.DiagonalUpLeft, 1.0);
-scissor.addCurl(fp.Finger.Middle, fp.FingerCurl.NoCurl, 1.0);
-scissor.addDirection(fp.Finger.Middle, fp.FingerDirection.VerticalUp, 0.75);
-scissor.addDirection(fp.Finger.Middle, fp.FingerDirection.DiagonalUpRight, 1.0);
-scissor.addCurl(fp.Finger.Ring, fp.FingerCurl.FullCurl, 1.0);
-scissor.addCurl(fp.Finger.Ring, fp.FingerCurl.HalfCurl, 0.5);
-scissor.addCurl(fp.Finger.Pinky, fp.FingerCurl.FullCurl, 1.0);
-scissor.addCurl(fp.Finger.Pinky, fp.FingerCurl.HalfCurl, 0.5);
-scissor.setWeight(fp.Finger.Index, 2);
-scissor.setWeight(fp.Finger.Middle, 2);
-export { rock, paper, scissor };
+var rock = new _fingerpose.default.GestureDescription('rock');
+exports.rock = rock;
+rock.addCurl(_fingerpose.default.Finger.Thumb, _fingerpose.default.FingerCurl.FullCurl, 1.0);
+rock.addCurl(_fingerpose.default.Finger.Index, _fingerpose.default.FingerCurl.FullCurl, 1.0);
+rock.addCurl(_fingerpose.default.Finger.Middle, _fingerpose.default.FingerCurl.FullCurl, 1.0);
+rock.addCurl(_fingerpose.default.Finger.Ring, _fingerpose.default.FingerCurl.FullCurl, 1.0);
+rock.addCurl(_fingerpose.default.Finger.Pinky, _fingerpose.default.FingerCurl.FullCurl, 1.0);
+var paper = new _fingerpose.default.GestureDescription('paper');
+exports.paper = paper;
+paper.addCurl(_fingerpose.default.Finger.Thumb, _fingerpose.default.FingerCurl.NoCurl, 1.0);
+paper.addCurl(_fingerpose.default.Finger.Index, _fingerpose.default.FingerCurl.NoCurl, 1.0);
+paper.addDirection(_fingerpose.default.Finger.Index, _fingerpose.default.FingerDirection.VerticalUp, 1.0);
+paper.addDirection(_fingerpose.default.Finger.Index, _fingerpose.default.FingerDirection.DiagonalUpLeft, 0.75);
+paper.addDirection(_fingerpose.default.Finger.Index, _fingerpose.default.FingerDirection.DiagonalUpRight, 0.75);
+paper.addCurl(_fingerpose.default.Finger.Middle, _fingerpose.default.FingerCurl.NoCurl, 1.0);
+paper.addDirection(_fingerpose.default.Finger.Middle, _fingerpose.default.FingerDirection.VerticalUp, 1.0);
+paper.addDirection(_fingerpose.default.Finger.Middle, _fingerpose.default.FingerDirection.DiagonalUpLeft, 0.75);
+paper.addDirection(_fingerpose.default.Finger.Middle, _fingerpose.default.FingerDirection.DiagonalUpRight, 0.75);
+paper.addCurl(_fingerpose.default.Finger.Ring, _fingerpose.default.FingerCurl.NoCurl, 1.0);
+paper.addDirection(_fingerpose.default.Finger.Ring, _fingerpose.default.FingerDirection.VerticalUp, 1.0);
+paper.addDirection(_fingerpose.default.Finger.Ring, _fingerpose.default.FingerDirection.DiagonalUpLeft, 0.75);
+paper.addDirection(_fingerpose.default.Finger.Ring, _fingerpose.default.FingerDirection.DiagonalUpRight, 0.75);
+paper.addCurl(_fingerpose.default.Finger.Pinky, _fingerpose.default.FingerCurl.NoCurl, 1.0);
+paper.addDirection(_fingerpose.default.Finger.Pinky, _fingerpose.default.FingerDirection.VerticalUp, 1.0);
+paper.addDirection(_fingerpose.default.Finger.Pinky, _fingerpose.default.FingerDirection.DiagonalUpLeft, 0.75);
+paper.addDirection(_fingerpose.default.Finger.Pinky, _fingerpose.default.FingerDirection.DiagonalUpRight, 0.75);
+var scissor = new _fingerpose.default.GestureDescription('scissor');
+exports.scissor = scissor;
+scissor.addCurl(_fingerpose.default.Finger.Thumb, _fingerpose.default.FingerCurl.HalfCurl, 0.5);
+scissor.addCurl(_fingerpose.default.Finger.Thumb, _fingerpose.default.FingerCurl.NoCurl, 0.5);
+scissor.addDirection(_fingerpose.default.Finger.Thumb, _fingerpose.default.FingerDirection.VerticalUp, 1.0);
+scissor.addDirection(_fingerpose.default.Finger.Thumb, _fingerpose.default.FingerDirection.DiagonalUpLeft, 1.0);
+scissor.addCurl(_fingerpose.default.Finger.Index, _fingerpose.default.FingerCurl.NoCurl, 1.0);
+scissor.addDirection(_fingerpose.default.Finger.Index, _fingerpose.default.FingerDirection.VerticalUp, 0.75);
+scissor.addDirection(_fingerpose.default.Finger.Index, _fingerpose.default.FingerDirection.DiagonalUpLeft, 1.0);
+scissor.addCurl(_fingerpose.default.Finger.Middle, _fingerpose.default.FingerCurl.NoCurl, 1.0);
+scissor.addDirection(_fingerpose.default.Finger.Middle, _fingerpose.default.FingerDirection.VerticalUp, 0.75);
+scissor.addDirection(_fingerpose.default.Finger.Middle, _fingerpose.default.FingerDirection.DiagonalUpRight, 1.0);
+scissor.addCurl(_fingerpose.default.Finger.Ring, _fingerpose.default.FingerCurl.FullCurl, 1.0);
+scissor.addCurl(_fingerpose.default.Finger.Ring, _fingerpose.default.FingerCurl.HalfCurl, 0.5);
+scissor.addCurl(_fingerpose.default.Finger.Pinky, _fingerpose.default.FingerCurl.FullCurl, 1.0);
+scissor.addCurl(_fingerpose.default.Finger.Pinky, _fingerpose.default.FingerCurl.HalfCurl, 0.5);
+scissor.setWeight(_fingerpose.default.Finger.Index, 2);
+scissor.setWeight(_fingerpose.default.Finger.Middle, 2);

@@ -1,3 +1,16 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _Camera = _interopRequireDefault(require("../components/Camera"));
+
+var _FaceMesh = _interopRequireDefault(require("../components/FaceMesh"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 /**
  * @license
  * Copyright 2021-2022 The SeedV Lab.
@@ -14,9 +27,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import Camera from '../components/Camera';
-import FaceMesh from '../components/FaceMesh';
-const style = {
+var style = {
   position: 'absolute',
   top: 0,
   left: 0,
@@ -26,7 +37,7 @@ const style = {
   height: 480
 };
 
-const FaceMeshDemo = props => {
+var FaceMeshDemo = function FaceMeshDemo(props) {
   /**
    * Handles face estimation.
    * @param {Object} prediction
@@ -35,12 +46,13 @@ const FaceMeshDemo = props => {
     console.log(prediction);
   }
 
-  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(Camera, {
+  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(_Camera.default, {
     style: style
-  }, /*#__PURE__*/React.createElement(FaceMesh, {
+  }, /*#__PURE__*/React.createElement(_FaceMesh.default, {
     backend: "webgl",
     onFaceEstimate: onFaceEstimate
   })));
 };
 
-export default FaceMeshDemo;
+var _default = FaceMeshDemo;
+exports.default = _default;

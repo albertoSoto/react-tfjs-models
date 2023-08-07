@@ -1,3 +1,25 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.drawHand = drawHand;
+exports.drawPose = drawPose;
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e2) { throw _e2; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e3) { didErr = true; err = _e3; }, f: function f() { try { if (!normalCompletion && it.return != null) it.return(); } finally { if (didErr) throw err; } } }; }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
 /**
  * @license
  * Copyright 2021-2022 The SeedV Lab.
@@ -14,14 +36,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-const fingerJoints = {
+var fingerJoints = {
   thumb: [0, 1, 2, 3, 4],
   indexFinger: [0, 5, 6, 7, 8],
   middleFinger: [0, 9, 10, 11, 12],
   ringFinger: [0, 13, 14, 15, 16],
   pinky: [0, 17, 18, 19, 20]
 };
-const scoreThreshold = 0.65;
+var scoreThreshold = 0.65;
 /**
  * Draws a hand.
  * @param {Array<number>} landmarks
@@ -29,18 +51,18 @@ const scoreThreshold = 0.65;
  */
 
 function drawHand(landmarks, ctx) {
-  for (let j = 0; j < Object.keys(fingerJoints).length; j++) {
-    const finger = Object.keys(fingerJoints)[j]; //  Loop through pairs of joints
+  for (var j = 0; j < Object.keys(fingerJoints).length; j++) {
+    var finger = Object.keys(fingerJoints)[j]; //  Loop through pairs of joints
 
-    for (let k = 0; k < fingerJoints[finger].length - 1; k++) {
+    for (var k = 0; k < fingerJoints[finger].length - 1; k++) {
       // Get pairs of joints
-      const firstJointIndex = fingerJoints[finger][k];
-      const secondJointIndex = fingerJoints[finger][k + 1];
+      var firstJointIndex = fingerJoints[finger][k];
+      var secondJointIndex = fingerJoints[finger][k + 1];
       drawPath(landmarks[firstJointIndex], landmarks[secondJointIndex], ctx);
     }
   }
 
-  landmarks.forEach(landmark => {
+  landmarks.forEach(function (landmark) {
     drawPoint(landmark[0], landmark[1], ctx);
   });
 }
@@ -84,7 +106,7 @@ function drawPath(from, to, ctx) {
 
 
 function drawPose(predictions, keypointIndices, adjacentPairs, ctx) {
-  const keypoints = predictions.keypoints;
+  var keypoints = predictions.keypoints;
   drawKeypoints(keypoints, keypointIndices, ctx);
   drawSkeleton(keypoints, adjacentPairs, ctx);
 }
@@ -98,16 +120,46 @@ function drawPose(predictions, keypointIndices, adjacentPairs, ctx) {
 
 
 function drawKeypoints(keypoints, keypointIndices, ctx) {
-  for (const i of keypointIndices.middle) {
-    drawKeypoint(keypoints[i], 'yellow', ctx);
+  var _iterator = _createForOfIteratorHelper(keypointIndices.middle),
+      _step;
+
+  try {
+    for (_iterator.s(); !(_step = _iterator.n()).done;) {
+      var i = _step.value;
+      drawKeypoint(keypoints[i], 'yellow', ctx);
+    }
+  } catch (err) {
+    _iterator.e(err);
+  } finally {
+    _iterator.f();
   }
 
-  for (const i of keypointIndices.left) {
-    drawKeypoint(keypoints[i], 'lime', ctx);
+  var _iterator2 = _createForOfIteratorHelper(keypointIndices.left),
+      _step2;
+
+  try {
+    for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+      var _i = _step2.value;
+      drawKeypoint(keypoints[_i], 'lime', ctx);
+    }
+  } catch (err) {
+    _iterator2.e(err);
+  } finally {
+    _iterator2.f();
   }
 
-  for (const i of keypointIndices.right) {
-    drawKeypoint(keypoints[i], 'red', ctx);
+  var _iterator3 = _createForOfIteratorHelper(keypointIndices.right),
+      _step3;
+
+  try {
+    for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
+      var _i2 = _step3.value;
+      drawKeypoint(keypoints[_i2], 'red', ctx);
+    }
+  } catch (err) {
+    _iterator3.e(err);
+  } finally {
+    _iterator3.f();
   }
 }
 /**
@@ -119,7 +171,7 @@ function drawKeypoints(keypoints, keypointIndices, ctx) {
 
 
 function drawKeypoint(keypoint, color, ctx) {
-  const score = keypoint.score != null ? keypoint.score : 1;
+  var score = keypoint.score != null ? keypoint.score : 1;
 
   if (score >= scoreThreshold) {
     ctx.beginPath();
@@ -140,12 +192,16 @@ function drawSkeleton(keypoints, adjacentPairs, ctx) {
   ctx.fillStyle = 'White';
   ctx.strokeStyle = 'White';
   ctx.lineWidth = 3;
-  adjacentPairs.forEach(([i, j]) => {
-    const kp1 = keypoints[i];
-    const kp2 = keypoints[j]; // If score is null, just show the keypoint.
+  adjacentPairs.forEach(function (_ref) {
+    var _ref2 = _slicedToArray(_ref, 2),
+        i = _ref2[0],
+        j = _ref2[1];
 
-    const score1 = kp1.score != null ? kp1.score : 1;
-    const score2 = kp2.score != null ? kp2.score : 1;
+    var kp1 = keypoints[i];
+    var kp2 = keypoints[j]; // If score is null, just show the keypoint.
+
+    var score1 = kp1.score != null ? kp1.score : 1;
+    var score2 = kp2.score != null ? kp2.score : 1;
 
     if (score1 >= scoreThreshold && score2 >= scoreThreshold) {
       ctx.beginPath();
@@ -155,5 +211,3 @@ function drawSkeleton(keypoints, adjacentPairs, ctx) {
     }
   });
 }
-
-export { drawHand, drawPose };
