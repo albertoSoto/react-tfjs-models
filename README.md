@@ -7,6 +7,10 @@ image classification, pose detection, face detection, body segmentation and more
 Comparing to integrating the underlying library, this project provides various supports for non-machine learning
 experts to use these models in their Rect applications.
 
+## Credits
+
+This project has been updated and forked from https://github.com/SeedV/react-tfjs-models
+
 ## React components hierarchy
 
 `react-tfjs-models` has provided a more intuitive declarative syntax, rather than the traditional imperative
@@ -88,3 +92,7 @@ yarn install
 # Start demo server on http.
 yarn start
 ```
+
+## Curious about publishing your own npm package?
+
+Try using this straigh forward guide https://onlyoneaman.medium.com/creating-an-npm-package-from-react-component-ee5b0ba0cd49
