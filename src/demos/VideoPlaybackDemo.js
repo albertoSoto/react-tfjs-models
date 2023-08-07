@@ -70,7 +70,7 @@ const VideoPlaybackDemo = (props) => {
         <BlazePose
           backend='webgl'
           runtime='tfjs'
-          type={posedetection.movenet.modelType.SINGLEPOSE_LIGHTNING}
+          type={posedetection.movenet.modelType.SINGLEPOSE_THUNDER}
           maxPoses={1}
           flipHorizontal={true}
           loader={MoveNetLoader}

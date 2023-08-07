@@ -2,7 +2,7 @@
   "name": "react-tfjs-models",
   "version": "1.0.0",
   "description": "React helpers to use with tensorflow js on videos",
-  "main": "src/index.js",
+  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/albertoSoto/react-tfjs-models.git"
