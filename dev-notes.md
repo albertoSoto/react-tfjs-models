@@ -1,0 +1,4 @@
+
+Mediapipe
+https://developers.google.com/mediapipe/solutions/examples
+https://codepen.io/mediapipe-preview/pen/abRLMxN

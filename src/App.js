@@ -16,63 +16,48 @@
  */
 
 import React from 'react';
+import Root from './routes/root';
 import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
+  createBrowserRouter,
+  RouterProvider,
 } from 'react-router-dom';
 import CartoonMirror from './demos/CartoonMirror';
 import FaceMeshDemo from './demos/FaceMeshDemo';
 import RockPaperScissors from './demos/RockPaperScissors';
 import VideoPlaybackDemo from './demos/VideoPlaybackDemo';
 
-const pathRockPaperScissors = '/rockpaperscissors';
-const pathCartoonMirror = '/cartoonmirror';
-const pathFaceMesh = '/facemesh';
-const pathVideoPlayback = '/videoplayback';
 
 /**
  * The app component.
  * @return {JSX.Element}
  */
 function App() {
+  const pathRockPaperScissors = '/rockpaperscissors';
+  const pathCartoonMirror = '/cartoonmirror';
+  const pathFaceMesh = '/facemesh';
+  const pathVideoPlayback = '/videoplayback';
+  const router = createBrowserRouter([
+    {
+      path: '/',
+      element: <Root/>,
+    }, {
+      path: pathRockPaperScissors,
+      element: <RockPaperScissors/>,
+    }, {
+      path: pathCartoonMirror,
+      element: <CartoonMirror/>,
+    }, {
+      path: pathFaceMesh,
+      element: <FaceMeshDemo/>,
+    }, {
+      path: pathVideoPlayback,
+      element: <VideoPlaybackDemo/>,
+    },
+  ]);
   return (
-    <Router>
-      <div>
-        <Switch>
-          <Route path="/" exact>
-          This page shows a list of demos in this project.
-            <ul>
-              <li>
-                <Link to={pathRockPaperScissors}>RockPaperScissors</Link>
-              </li>
-              <li>
-                <Link to={pathCartoonMirror}>CartoonMirror</Link>
-              </li>
-              <li>
-                <Link to={pathFaceMesh}>FaceMesh</Link>
-              </li>
-              <li>
-                <Link to={pathVideoPlayback}>VideoPlayback</Link>
-              </li>
-            </ul>
-          </Route>
-          <Route path={pathRockPaperScissors}>
-            <RockPaperScissors />
-          </Route>
-          <Route path={pathCartoonMirror}>
-            <CartoonMirror />
-          </Route>
-          <Route path={pathFaceMesh}>
-            <FaceMeshDemo />
-          </Route>
-          <Route path={pathVideoPlayback}>
-            <VideoPlaybackDemo />
-          </Route>
-        </Switch>
-      </div>
-    </Router>
+    <React.StrictMode>
+      <RouterProvider router={router} />
+    </React.StrictMode>
   );
 }
 
