@@ -1,6 +1,6 @@
 {
   "name": "react-tfjs-models-movenet",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "React helpers to use with tensorflow js on videos",
   "main": "index.js",
   "repository": {
