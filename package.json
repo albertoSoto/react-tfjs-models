@@ -1,7 +1,25 @@
 {
-  "name": "react-blazepalm",
-  "version": "0.1.0",
-  "private": true,
+  "name": "react-tfjs-models",
+  "version": "1.0.0",
+  "description": "React helpers to use with tensorflow js on videos",
+  "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/albertoSoto/react-tfjs-models.git"
+  },
+  "keywords": [
+    "ML",
+    "tensorflowjs",
+    "react",
+    "video",
+    "posenet",
+    "movenet"
+  ],
+  "author": "Alberto Soto Fernandez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/albertoSoto/react-tfjs-models/issues"
+  },
   "dependencies": {
     "@mediapipe/pose": "^0.5.1675469404",
     "@react-three/drei": "^9.80.1",
@@ -30,7 +48,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "publish:npm": "rm -rf dist && mkdir dist &&  babel src/components -d dist --copy-files"
   },
   "browserslist": {
     "production": [

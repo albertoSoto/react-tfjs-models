@@ -16,7 +16,12 @@
  */
 
 import React from 'react';
-import Root from './routes/root';
+import Root, {
+  pathCartoonMirror,
+  pathFaceMesh,
+  pathVideoPlayback,
+  pathRockPaperScissors,
+} from './routes/root';
 import {
   createBrowserRouter,
   RouterProvider,
@@ -32,10 +37,6 @@ import VideoPlaybackDemo from './demos/VideoPlaybackDemo';
  * @return {JSX.Element}
  */
 function App() {
-  const pathRockPaperScissors = '/rockpaperscissors';
-  const pathCartoonMirror = '/cartoonmirror';
-  const pathFaceMesh = '/facemesh';
-  const pathVideoPlayback = '/videoplayback';
   const router = createBrowserRouter([
     {
       path: '/',
@@ -56,7 +57,7 @@ function App() {
   ]);
   return (
     <React.StrictMode>
-      <RouterProvider router={router} />
+      <RouterProvider router={router}/>
     </React.StrictMode>
   );
 }

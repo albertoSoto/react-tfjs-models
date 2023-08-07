@@ -1,10 +1,10 @@
 import {Link} from 'react-router-dom';
 import React from 'react';
 
-const pathRockPaperScissors = '/rockpaperscissors';
-const pathCartoonMirror = '/cartoonmirror';
-const pathFaceMesh = '/facemesh';
-const pathVideoPlayback = '/videoplayback';
+export const pathRockPaperScissors = '/rockpaperscissors';
+export const pathCartoonMirror = '/cartoonmirror';
+export const pathFaceMesh = '/facemesh';
+export const pathVideoPlayback = '/videoplayback';
 /**
  * Router for application
  * @return {Element}
