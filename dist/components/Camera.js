@@ -17,8 +17,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import Webcam from 'react-webcam';
 import { VideoContext } from './global';
-import { jsx as _jsx } from "custom-jsx-library/jsx-runtime";
-import { jsxs as _jsxs } from "custom-jsx-library/jsx-runtime";
 const initVideoState = {
   video: null
 };
@@ -54,19 +52,16 @@ const Camera = props => {
     onAnimate();
     return () => cancelAnimationFrame(requestRef.current);
   }, [onAnimate]);
-  return _jsxs("div", {
-    children: [_jsx(Webcam, {
-      ref: webcamRef,
-      mirrored: true,
-      style: props.style
-    }), _jsx("canvas", {
-      ref: canvasRef,
-      style: props.style
-    }), _jsx(VideoContext.Provider, {
-      value: videoState,
-      children: props.children
-    })]
-  });
+  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(Webcam, {
+    ref: webcamRef,
+    mirrored: true,
+    style: props.style
+  }), /*#__PURE__*/React.createElement("canvas", {
+    ref: canvasRef,
+    style: props.style
+  }), /*#__PURE__*/React.createElement(VideoContext.Provider, {
+    value: videoState
+  }, props.children));
 };
 
 export default Camera;

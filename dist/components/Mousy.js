@@ -1,3 +1,5 @@
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
 /**
  * @license
  * Copyright 2021-2022 The SeedV Lab.
@@ -26,8 +28,6 @@ import { Vector3 } from 'three';
  * @return {string} rendered JSX.
  */
 
-import { jsx as _jsx } from "custom-jsx-library/jsx-runtime";
-import { jsxs as _jsxs } from "custom-jsx-library/jsx-runtime";
 export default function Mousy(props) {
   let kp;
   const group = useRef();
@@ -52,21 +52,19 @@ export default function Mousy(props) {
       nodes.Ch14.skeleton.bones[29].setRotationFromQuaternion(quaternionFrom(rWrist, rElbow, rShoulder));
     }
   });
-  return _jsx("group", {
-    ref: group,
-    ...props,
-    dispose: null,
-    children: _jsxs("group", {
-      name: "Armature",
-      rotation: [Math.PI / 2, 0, 0],
-      scale: [0.01, 0.01, 0.01],
-      children: [_jsx("primitive", {
-        object: nodes.mixamorigHips
-      }), _jsx("skinnedMesh", {
-        geometry: nodes.Ch14.geometry,
-        material: materials.Ch14_Body,
-        skeleton: nodes.Ch14.skeleton
-      })]
-    })
-  });
+  return /*#__PURE__*/React.createElement("group", _extends({
+    ref: group
+  }, props, {
+    dispose: null
+  }), /*#__PURE__*/React.createElement("group", {
+    name: "Armature",
+    rotation: [Math.PI / 2, 0, 0],
+    scale: [0.01, 0.01, 0.01]
+  }, /*#__PURE__*/React.createElement("primitive", {
+    object: nodes.mixamorigHips
+  }), /*#__PURE__*/React.createElement("skinnedMesh", {
+    geometry: nodes.Ch14.geometry,
+    material: materials.Ch14_Body,
+    skeleton: nodes.Ch14.skeleton
+  })));
 }

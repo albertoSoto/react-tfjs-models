@@ -1,5 +1,5 @@
 {
-  "name": "react-tfjs-models",
+  "name": "react-tfjs-models-movenet",
   "version": "1.0.1",
   "description": "React helpers to use with tensorflow js on videos",
   "main": "index.js",
@@ -54,7 +54,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "publish-build:npm": "rm -rf dist && mkdir dist &&  babel src/components -d dist --copy-files",
+    "publish-build:npm": "rm -rf dist && mkdir dist && babel src -d dist --copy-files",
     "publish-deploy:npm": "npm publish"
   },
   "browserslist": {
@@ -71,6 +71,7 @@
   },
   "devDependencies": {
     "@babel/cli": "^7.22.9",
+    "@babel/plugin-syntax-jsx": "^7.22.5",
     "@babel/plugin-transform-react-jsx": "^7.22.5",
     "@babel/preset-react": "^7.22.5",
     "eslint-config-google": "^0.14.0",

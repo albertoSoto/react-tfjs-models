@@ -142,6 +142,3 @@ yarn install
 yarn start
 ```
 
-## Curious about publishing your own npm package?
-
-Try using this straigh forward guide https://onlyoneaman.medium.com/creating-an-npm-package-from-react-component-ee5b0ba0cd49
